@@ -66,7 +66,7 @@ class UserViewSet(viewsets.ModelViewSet):
         user.is_verified = True
         user.save()
 
-        # Generate JWT token
+        # Generate JWT token for the user
         refresh = RefreshToken.for_user(user)
 
         return Response({
